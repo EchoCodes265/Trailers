@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raccoon Reel Trailers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body class="bg-dark text-light">
+
+    <!-- Main Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Raccoon Reel Trailers</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/watchlist">Watchlist</a>
+                </li>
+            </ul>
+            <form id="searchForm" class="form-inline ml-auto">
+                <input id="searchInput" class="form-control mr-sm-2 bg-dark text-light border-0" type="search"
+                    placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Trending Section -->
+    <div class="container mt-4">
+        <h2 class="text-center">Trending</h2>
+        <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+            <label class="btn btn-primary active" data-toggle="tab" data-target="#movies">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Movies
+            </label>
+            <label class="btn btn-secondary" data-toggle="tab" data-target="#tvshows">
+                <input type="radio" name="options" id="option2" autocomplete="off"> TV Shows
+            </label>
+        </div>
+
+
+
+        <div class="tab-content mt-4" id="trendingContent">
+            <!-- Movies Section -->
+            <div class="tab-pane fade show active" id="movies" role="tabpanel">
+                <div class="row" id="moviesList">
+                    <!-- Movie cards will be generated here -->
+                </div>
+            </div>
+            <!-- TV Shows Section -->
+            <div class="tab-pane fade" id="tvshows" role="tabpanel">
+                <div class="row" id="tvShowsList">
+                    <!-- TV Show cards will be generated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="btn btn-outline-light" href="#" id="prevPage">Prev</a></li>
+                <li class="page-item"><a class="btn btn-outline-light" href="#" id="nextPage">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="../static/js/main.js"></script>
+</body>
+
+</html>
