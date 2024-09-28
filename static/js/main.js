@@ -147,6 +147,7 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
 });
 
 
+
 // Initially load movies and TV shows
 getTrendingMovies();
 getTrendingTVShows();
