@@ -1,82 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raccoon Reel Trailers</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trailers</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-
-<body class="bg-dark text-light">
-
+  <body class="bg-dark text-light">
     <!-- Main Nav -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">Trailers</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/watchlist">Watchlist</a>
-              </li>
-            </ul>
-            <form class="d-flex" id="searchForm">
-              <input class="form-control me-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <i class="bi bi-film me-2"></i>Raccoon Reel
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/watchlist">
+                <i class="bi bi-bookmark-heart me-1"></i>Watchlist
+              </a>
+            </li>
+          </ul>
+          <form class="d-flex" id="searchForm">
+            <input
+              class="form-control me-2"
+              id="searchInput"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
         </div>
-      </nav>
-      
+      </div>
+    </nav>
 
     <!-- Trending Section -->
-    <div class="container mt-4">
-        <h2 class="text-center">Trending</h2>
-        <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
-            <label class="btn btn-primary active" data-toggle="tab" data-target="#movies">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> Movies
-            </label>
-            <label class="btn btn-secondary" data-toggle="tab" data-target="#tvshows">
-                <input type="radio" name="options" id="option2" autocomplete="off"> TV Shows
-            </label>
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Trending</h2>
+      <ul
+        class="nav nav-pills justify-content-center mb-4"
+        id="trendingTabs"
+        role="tablist"
+      >
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="movies-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#movies"
+            type="button"
+            role="tab"
+            aria-controls="movies"
+            aria-selected="true"
+          >
+            Movies
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="tvshows-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#tvshows"
+            type="button"
+            role="tab"
+            aria-controls="tvshows"
+            aria-selected="false"
+          >
+            TV Shows
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="trendingContent">
+        <!-- Movies Section -->
+        <div
+          class="tab-pane fade show active"
+          id="movies"
+          role="tabpanel"
+          aria-labelledby="movies-tab"
+        >
+          <div
+            class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4"
+            id="moviesList"
+          >
+            <!-- Movie cards will be generated here -->
+          </div>
         </div>
-
-
-
-        <div class="tab-content mt-4" id="trendingContent">
-            <!-- Movies Section -->
-            <div class="tab-pane fade show active" id="movies" role="tabpanel">
-                <div class="row" id="moviesList">
-                    <!-- Movie cards will be generated here -->
-                </div>
-            </div>
-            <!-- TV Shows Section -->
-            <div class="tab-pane fade" id="tvshows" role="tabpanel">
-                <div class="row" id="tvShowsList">
-                    <!-- TV Show cards will be generated here -->
-                </div>
-            </div>
+        <!-- TV Shows Section -->
+        <div
+          class="tab-pane fade"
+          id="tvshows"
+          role="tabpanel"
+          aria-labelledby="tvshows-tab"
+        >
+          <div
+            class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4"
+            id="tvShowsList"
+          >
+            <!-- TV Show cards will be generated here -->
+          </div>
         </div>
+      </div>
 
-        <!-- Pagination -->
-        <nav aria-label="Page navigation" class="mt-4">
-            <ul class="pagination justify-content-center">
-                <li class="page-item"><a class="btn btn-outline-light" href="#" id="prevPage">Prev</a></li>
-                <li class="page-item"><a class="btn btn-outline-light" href="#" id="nextPage">Next</a></li>
-            </ul>
-        </nav>
+      <!-- Pagination -->
+      <nav aria-label="Page navigation" class="mt-5">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <button class="btn btn-outline-light me-2" id="prevPage">
+              <i class="bi bi-chevron-left"></i> Prev
+            </button>
+          </li>
+          <li class="page-item">
+            <button class="btn btn-outline-light" id="nextPage">
+              Next <i class="bi bi-chevron-right"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../static/js/main.js"></script>
-</body>
-
+  </body>
 </html>
