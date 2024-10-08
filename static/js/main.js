@@ -28,11 +28,17 @@ const tvShowsContent = document.getElementById("tvshows");
 moviesTab.addEventListener("click", () => {
   moviesContent.classList.add("show", "active");
   tvShowsContent.classList.remove("show", "active");
+  currentPage = 1;
+  getTrendingMovies();
+  window.scrollTo(0, 0);
 });
 
 tvShowsTab.addEventListener("click", () => {
   tvShowsContent.classList.add("show", "active");
   moviesContent.classList.remove("show", "active");
+  currentPage = 1;
+  getTrendingTVShows();
+  window.scrollTo(0, 0);
 });
 
 // Function to display movies in the DOM
@@ -124,15 +130,23 @@ function addToWatchlist(media, type) {
 // Pagination buttons
 document.getElementById("nextPage").addEventListener("click", () => {
   currentPage++;
-  getTrendingMovies();
-  getTrendingTVShows();
+  if (moviesContent.classList.contains("active")) {
+    getTrendingMovies();
+  } else {
+    getTrendingTVShows();
+  }
+  window.scrollTo(0, 0);
 });
 
 document.getElementById("prevPage").addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
-    getTrendingMovies();
-    getTrendingTVShows();
+    if (moviesContent.classList.contains("active")) {
+      getTrendingMovies();
+    } else {
+      getTrendingTVShows();
+    }
+    window.scrollTo(0, 0);
   }
 });
 
