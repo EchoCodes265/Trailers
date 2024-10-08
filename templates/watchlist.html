@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raccoon Reel Trailers - Watchlist</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watchlist</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-
-<body class="bg-dark text-light">
-
+  <body class="bg-dark text-light">
     <!-- Main Nav -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Watchlist</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <i class="bi bi-film me-2"></i>Raccoon Reel
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/watchlist">Watchlist</a>
-                </li>
-            </ul>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/watchlist">
+                <i class="bi bi-bookmark-heart me-1"></i>Watchlist
+              </a>
+            </li>
+          </ul>
+          <form class="d-flex" id="searchForm">
+            <input
+              class="form-control me-2"
+              id="searchInput"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
         </div>
+      </div>
     </nav>
 
     <!-- Watchlist Section -->
-    <div class="container mt-4">
-        <h2 class="text-center">Your Watchlist</h2>
-        <div class="row" id="watchlistItems">
-            <!-- Watchlist items will be generated here -->
-        </div>
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Your Watchlist</h2>
+      <div
+        class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4"
+        id="watchlistGrid"
+      >
+        <!-- Watchlist items will be generated here -->
+      </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../static/js/watchlist.js"></script>
-</body>
-
+  </body>
 </html>
